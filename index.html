@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIBANK - Lançamento</title>
+    <style>
+        body {
+            background-image: url('banco_futurista.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        #countdown {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>AIBANK - Lançamento</h1>
+    <p>Uma Dapp DEFi inteligente para rendimentos automáticos.</p>
+    <div id="countdown"></div>
+
+    <script>
+        // Data de lançamento (20 de agosto)
+        const launchDate = new Date('2024-08-20T00:00:00Z').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = launchDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerHTML = `Lançamento em ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        // Atualiza o contador a cada segundo
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
